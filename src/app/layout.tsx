@@ -86,7 +86,9 @@ export default function RootLayout({
                 <Glow />
                 <Toaster />
                 <Plausible />
+                <div className="max-w-[2325px] mx-auto">
                 {children}
+                </div>
             </body>
             {/* <Analytics /> */}
             <GoogleAnalytics

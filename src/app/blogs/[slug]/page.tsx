@@ -86,7 +86,7 @@ export default async function BlogPage({ params }: TProps) {
 
     return (
         <div className="w-full flex justify-center">
-            <main className="w-full min-h-screen max-w-[600px] p-2">
+            <main className="w-full min-h-screen max-w-[800px] p-2">
                 <BlogHeader />
                 {blog && (
                     <BlogContent blog={blog} content={highlightedContent} />

@@ -33,7 +33,7 @@ export default async function Blogs() {
 
     return (
         <div className="w-full flex justify-center">
-            <main className="w-full min-h-screen max-w-[600px] p-2">
+            <main className="w-full min-h-screen max-w-[800px] p-2">
                 <BlogHeader/>
                 <div className="p-2">
                     <h2 className="text-sm font-bold">BLOGS</h2>

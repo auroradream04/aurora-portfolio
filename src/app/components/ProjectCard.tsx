@@ -40,24 +40,16 @@ export default function ProjectCard({
     const [showModal, setShowModal] = useState(false);
     const [activeMediaIndex, setActiveMediaIndex] = useState(0);
     const [mounted, setMounted] = useState(false);
-    const [activeMediaType, setActiveMediaType] = useState<'image' | 'video'>(previewImages.length > 0 ? 'image' : 'video');
     const videoRef = useRef<HTMLVideoElement>(null);
 
     // Combine images and videos into a single array for easier navigation
     const allMedia: MediaItem[] = [
-        ...previewImages.map(src => ({ src, type: 'image' as const })),
-        ...previewVideos.map(src => ({ src, type: 'video' as const }))
+        ...previewVideos.map(src => ({ src, type: 'video' as const })),
+        ...previewImages.map(src => ({ src, type: 'image' as const }))
     ];
-
-    // Filter media by type
-    const imageMedia = allMedia.filter(item => item.type === 'image');
-    const videoMedia = allMedia.filter(item => item.type === 'video');
-
-    // Get currently active media based on type
-    const activeMedia = activeMediaType === 'image' ? imageMedia : videoMedia;
     
     // Only show up to 4 media items in the card preview
-    const combinedPreviews = [...videoMedia, ...imageMedia].slice(0, 4);
+    const combinedPreviews = [...previewVideos, ...previewImages].slice(0, 4);
     const hasMorePreviews = allMedia.length > 4;
     const extraPreviewsCount = allMedia.length - 4;
 
@@ -83,15 +75,15 @@ export default function ProjectCard({
             if (e.key === 'Escape') {
                 setShowModal(false);
             } else if (e.key === 'ArrowRight') {
-                if (activeMedia.length > 0) {
+                if (allMedia.length > 0) {
                     setActiveMediaIndex(prev => 
-                        prev === activeMedia.length - 1 ? 0 : prev + 1
+                        prev === allMedia.length - 1 ? 0 : prev + 1
                     );
                 }
             } else if (e.key === 'ArrowLeft') {
-                if (activeMedia.length > 0) {
+                if (allMedia.length > 0) {
                     setActiveMediaIndex(prev => 
-                        prev === 0 ? activeMedia.length - 1 : prev - 1
+                        prev === 0 ? allMedia.length - 1 : prev - 1
                     );
                 }
             }
@@ -99,25 +91,19 @@ export default function ProjectCard({
         
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [showModal, activeMedia.length]);
+    }, [showModal, allMedia.length]);
 
     // Function to navigate to next/previous media
     const handleNext = () => {
-        if (activeMedia.length > 0) {
-            setActiveMediaIndex(prev => prev === activeMedia.length - 1 ? 0 : prev + 1);
+        if (allMedia.length > 0) {
+            setActiveMediaIndex(prev => prev === allMedia.length - 1 ? 0 : prev + 1);
         }
     };
     
     const handlePrev = () => {
-        if (activeMedia.length > 0) {
-            setActiveMediaIndex(prev => prev === 0 ? activeMedia.length - 1 : prev - 1);
+        if (allMedia.length > 0) {
+            setActiveMediaIndex(prev => prev === 0 ? allMedia.length - 1 : prev - 1);
         }
-    };
-
-    // Toggle between images and videos
-    const toggleMediaType = (type: 'image' | 'video') => {
-        setActiveMediaType(type);
-        setActiveMediaIndex(0); // Reset to first item when changing types
     };
 
     return (
@@ -140,48 +126,48 @@ export default function ProjectCard({
             {/* Preview media gallery */}
             {combinedPreviews.length > 0 && (
                 <div className="grid grid-cols-4 gap-2 mb-3">
-                    {combinedPreviews.map((media, index) => (
-                        <div 
-                            key={index}
-                            className="relative aspect-video rounded-md overflow-hidden cursor-pointer border border-violet-500/20 hover:border-violet-500/50 transition-all"
-                            onClick={() => {
-                                setActiveMediaType(media.type);
-                                setActiveMediaIndex(
-                                    media.type === 'image' 
-                                        ? imageMedia.findIndex(img => img.src === media.src)
-                                        : videoMedia.findIndex(vid => vid.src === media.src)
-                                );
-                                setShowModal(true);
-                            }}
-                        >
-                            {media.type === 'image' ? (
-                                <Image 
-                                    src={media.src} 
-                                    alt={`${title} preview ${index + 1}`} 
-                                    fill 
-                                    className="object-cover hover:scale-105 transition-transform duration-300"
-                                />
-                            ) : (
-                                <>
-                                    <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
-                                        <FaVideo className="text-violet-400 text-2xl" />
-                                    </div>
-                                    <video 
-                                        src={media.src}
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                        preload="metadata"
+                    {combinedPreviews.map((media, index) => {
+                        const isVideoPreview = media.endsWith('.mp4') || media.endsWith('.webm') || media.endsWith('.mov');
+                        const mediaIndex = allMedia.findIndex(item => item.src === media);
+                        
+                        return (
+                            <div 
+                                key={index}
+                                className="relative aspect-video rounded-md overflow-hidden cursor-pointer border border-violet-500/20 hover:border-violet-500/50 transition-all"
+                                onClick={() => {
+                                    setActiveMediaIndex(mediaIndex);
+                                    setShowModal(true);
+                                }}
+                            >
+                                {isVideoPreview ? (
+                                    <>
+                                        <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
+                                            <FaVideo className="text-violet-400 text-2xl" />
+                                        </div>
+                                        <video 
+                                            src={media}
+                                            className="absolute inset-0 w-full h-full object-cover"
+                                            preload="metadata"
+                                        />
+                                    </>
+                                ) : (
+                                    <Image 
+                                        src={media} 
+                                        alt={`${title} preview ${index + 1}`} 
+                                        fill 
+                                        className="object-cover hover:scale-105 transition-transform duration-300"
                                     />
-                                </>
-                            )}
-                            
-                            {/* Show "+X more" overlay on the last visible preview if there are more */}
-                            {hasMorePreviews && index === combinedPreviews.length - 1 && (
-                                <div className="absolute inset-0 flex items-center justify-center bg-black/70">
-                                    <span className="text-white text-sm font-medium">+{extraPreviewsCount} more</span>
-                                </div>
-                            )}
-                        </div>
-                    ))}
+                                )}
+                                
+                                {/* Show "+X more" overlay on the last visible preview if there are more */}
+                                {hasMorePreviews && index === combinedPreviews.length - 1 && (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+                                        <span className="text-white text-sm font-medium">+{extraPreviewsCount} more</span>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             )}
 
@@ -220,7 +206,6 @@ export default function ProjectCard({
             {allMedia.length > 0 && (
                 <button 
                     onClick={() => {
-                        setActiveMediaType(imageMedia.length > 0 ? 'image' : 'video');
                         setActiveMediaIndex(0);
                         setShowModal(true);
                     }}
@@ -248,34 +233,6 @@ export default function ProjectCard({
                                 <h3 className="text-base font-medium text-slate-100">{title}</h3>
                             </div>
                             
-                            {/* Media type toggle */}
-                            {videoMedia.length > 0 && imageMedia.length > 0 && (
-                                <div className="flex items-center gap-2 bg-black/40 rounded-full px-2 py-1">
-                                    <button 
-                                        className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs ${
-                                            activeMediaType === 'image' 
-                                                ? 'bg-violet-600 text-white' 
-                                                : 'text-slate-400 hover:text-white'
-                                        } transition-colors`}
-                                        onClick={() => toggleMediaType('image')}
-                                    >
-                                        <FaImage size={12} />
-                                        <span>Images</span>
-                                    </button>
-                                    <button 
-                                        className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs ${
-                                            activeMediaType === 'video' 
-                                                ? 'bg-violet-600 text-white' 
-                                                : 'text-slate-400 hover:text-white'
-                                        } transition-colors`}
-                                        onClick={() => toggleMediaType('video')}
-                                    >
-                                        <FaVideo size={12} />
-                                        <span>Videos</span>
-                                    </button>
-                                </div>
-                            )}
-                            
                             <button 
                                 className="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white hover:bg-violet-600/20 rounded-full transition-colors"
                                 onClick={() => setShowModal(false)}
@@ -289,11 +246,11 @@ export default function ProjectCard({
                         <div className="flex-1 overflow-y-auto">
                             {/* Media display with navigation */}
                             <div className="relative h-[50vh] flex items-center justify-center px-2">
-                                {activeMedia.length > 0 ? (
+                                {allMedia.length > 0 ? (
                                     <div className="relative h-full max-w-full aspect-video mx-auto">
-                                        {activeMediaType === 'image' ? (
+                                        {allMedia[activeMediaIndex]?.type === 'image' ? (
                                             <Image 
-                                                src={activeMedia[activeMediaIndex]?.src || ''}
+                                                src={allMedia[activeMediaIndex].src}
                                                 alt={`${title} preview ${activeMediaIndex + 1}`}
                                                 fill
                                                 className="object-contain"
@@ -303,7 +260,7 @@ export default function ProjectCard({
                                         ) : (
                                             <video 
                                                 ref={videoRef}
-                                                src={activeMedia[activeMediaIndex]?.src || ''}
+                                                src={allMedia[activeMediaIndex].src}
                                                 className="w-full h-full object-contain"
                                                 controls
                                                 autoPlay
@@ -313,12 +270,12 @@ export default function ProjectCard({
                                     </div>
                                 ) : (
                                     <div className="flex items-center justify-center text-slate-500">
-                                        <p>No {activeMediaType === 'image' ? 'images' : 'videos'} available</p>
+                                        <p>No media available</p>
                                     </div>
                                 )}
                                 
                                 {/* Media navigation controls */}
-                                {activeMedia.length > 1 && (
+                                {allMedia.length > 1 && (
                                     <>
                                         <button 
                                             onClick={handlePrev}
@@ -341,9 +298,9 @@ export default function ProjectCard({
                             {/* Thumbnails and details */}
                             <div className="px-4 py-4">
                                 {/* Thumbnails */}
-                                {activeMedia.length > 1 && (
+                                {allMedia.length > 1 && (
                                     <div className="flex gap-2 overflow-x-auto pb-3 scrollbar-thin scrollbar-thumb-violet-500/50 scrollbar-track-black/20">
-                                        {activeMedia.map((media, index) => (
+                                        {allMedia.map((media, index) => (
                                             <div 
                                                 key={index}
                                                 className={`
@@ -353,7 +310,7 @@ export default function ProjectCard({
                                                 `}
                                                 onClick={() => setActiveMediaIndex(index)}
                                             >
-                                                {activeMediaType === 'image' ? (
+                                                {media.type === 'image' ? (
                                                     <Image 
                                                         src={media.src} 
                                                         alt={`Thumbnail ${index + 1}`} 

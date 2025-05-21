@@ -338,13 +338,13 @@ export default function ProjectCard({
                                 <div className="mt-5 grid md:grid-cols-2 gap-5">
                                     {/* Project description */}
                                     <div className="bg-black/30 p-4 rounded-lg">
-                                        <h4 className="text-xs uppercase text-slate-350 mb-2">About this project</h4>
+                                        <h4 className="text-xs uppercase text-white font-semibold mb-2">About this project</h4>
                                         <p className="text-slate-350 text-sm">{description}</p>
                                     </div>
                                     
                                     {/* Project details */}
                                     <div className="bg-black/30 p-4 rounded-lg flex flex-col">
-                                        <h4 className="text-xs uppercase text-slate-350 mb-2">Project details</h4>
+                                        <h4 className="text-xs uppercase text-white font-semibold mb-2">Project details</h4>
                                         
                                         {/* Links */}
                                         <div className="mb-4 space-y-2">
@@ -374,7 +374,7 @@ export default function ProjectCard({
                                         </div>
                                         
                                         {/* Tech stack */}
-                                        <h4 className="text-xs uppercase text-slate-350 mb-2">Built with</h4>
+                                        <h4 className="text-xs uppercase text-white font-semibold mb-2">Built with</h4>
                                         <div className="flex flex-wrap gap-1.5 mb-4">
                                             {technologies.map((tech, i) => (
                                                 <div 

@@ -152,6 +152,13 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://alvinchang.dev",
+                previewImages: [
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png", // This one will show as "+1 more"
+                ]
             },
             {
                 title: "Genzify AI",
@@ -182,6 +189,11 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://genzify-app-wine.vercel.app/",
+                previewImages: [
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png"
+                ]
             },
             {
                 title: "WhatAboutPets",
@@ -220,6 +232,10 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://whataboutpets.com",
+                previewImages: [
+                    "/Portfolio.png",
+                    "/Portfolio.png"
+                ]
             },
             {
                 title: "Plaiful - AI Agent Directory",
@@ -250,12 +266,20 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://plai-web.vercel.app/",
+                previewImages: [
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png", 
+                    "/Portfolio.png" // This will show as "+2 more"
+                ]
             },
             {
                 title: "Zambia Casino",
                 description:
                     "Built for a client, Zambia Casino is a sleek landing page for an online casino targeting the Zambian market. I designed and developed a responsive, high-performance site that effectively showcases the casino's offerings, promotions, and games. The project emphasizes strong visual elements, fast loading times, and intuitive navigation to optimize user engagement and conversion rates in the competitive online gambling space.",
-                logo: "/winbetavatar.png",
+                logo: "/zambia-casino-logo.png",
                 repoLink: "",
                 technologies: [
                     {
@@ -280,6 +304,12 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://zambia-casino.vercel.app/",
+                previewImages: [
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png",
+                    "/Portfolio.png"
+                ]
             },
         ],
         technologies: {

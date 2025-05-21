@@ -158,6 +158,9 @@ export const siteConfig = {
                     "/Portfolio.png",
                     "/Portfolio.png",
                     "/Portfolio.png", // This one will show as "+1 more"
+                ],
+                previewVideos: [
+                    "/genz.mp4"
                 ]
             },
             {
@@ -193,6 +196,9 @@ export const siteConfig = {
                     "/Portfolio.png",
                     "/Portfolio.png",
                     "/Portfolio.png"
+                ],
+                previewVideos: [
+                    "/genz.mp4"
                 ]
             },
             {
@@ -235,6 +241,9 @@ export const siteConfig = {
                 previewImages: [
                     "/Portfolio.png",
                     "/Portfolio.png"
+                ],
+                previewVideos: [
+                    "/genz.mp4"
                 ]
             },
             {
@@ -273,6 +282,10 @@ export const siteConfig = {
                     "/Portfolio.png",
                     "/Portfolio.png", 
                     "/Portfolio.png" // This will show as "+2 more"
+                ],
+                previewVideos: [
+                    "/genz.mp4",
+                    "/genz.mp4"
                 ]
             },
             {
@@ -309,6 +322,9 @@ export const siteConfig = {
                     "/Portfolio.png",
                     "/Portfolio.png",
                     "/Portfolio.png"
+                ],
+                previewVideos: [
+                    "/genz.mp4"
                 ]
             },
         ],

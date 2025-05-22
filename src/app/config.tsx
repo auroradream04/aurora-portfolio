@@ -161,7 +161,7 @@ export const siteConfig = {
                     "/projects/portfolio/6.webp"
                 ],
                 previewVideos: [
-                    "/projects/portfolio/portfolio-video.mp4"
+                    "https://storage.alvinchang.dev/portfolio-video-4k/output.m3u8"
                 ]
             },
             {

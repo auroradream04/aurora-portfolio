@@ -53,7 +53,7 @@ const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
 };
 
 // HLS Video Player component
-const HLSVideoPlayer = ({ src, className }: { src: string; className?: string }) => {
+const HLSVideoPlayer = ({ src, className, poster }: { src: string; className?: string; poster?: string }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -117,6 +117,7 @@ const HLSVideoPlayer = ({ src, className }: { src: string; className?: string })
                 className={className}
                 controls
                 playsInline
+                poster={poster}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
             />
@@ -366,6 +367,7 @@ export default function ProjectCard({
                                             <HLSVideoPlayer 
                                                 src={allMedia[activeMediaIndex].src}
                                                 className="w-full h-full object-contain"
+                                                poster={previewImages[0]}
                                             />
                                         )}
                                     </div>

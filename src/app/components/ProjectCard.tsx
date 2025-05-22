@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 import ProjectTechStack from "./ProjectTechStack";
 import { FaGithub, FaLink, FaArrowLeft, FaArrowRight, FaImage, FaVideo } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { useInView } from "react-intersection-observer";
 
 type TProps = {
     title: string;
@@ -25,6 +26,29 @@ type TProps = {
 type MediaItem = {
     src: string;
     type: 'image' | 'video';
+};
+
+// LazyVideo component for optimized video loading
+const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        rootMargin: '50px 0px',
+    });
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    return (
+        <div ref={ref} className={className}>
+            {inView && (
+                <video
+                    src={src}
+                    className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    preload="none"
+                    playsInline
+                    onLoadedData={() => setIsLoaded(true)}
+                />
+            )}
+        </div>
+    );
 };
 
 export default function ProjectCard({
@@ -144,10 +168,12 @@ export default function ProjectCard({
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
                                             <FaVideo className="text-violet-400 text-2xl" />
                                         </div>
-                                        <video 
-                                            src={media}
-                                            className="absolute inset-0 w-full h-full object-cover"
-                                            preload="metadata"
+                                        {/* Use the first image as thumbnail for videos */}
+                                        <Image 
+                                            src={previewImages[0]} 
+                                            alt={`${title} preview thumbnail`} 
+                                            fill 
+                                            className="object-cover"
                                         />
                                     </>
                                 ) : (
@@ -265,6 +291,7 @@ export default function ProjectCard({
                                                 controls
                                                 autoPlay
                                                 loop
+                                                preload="auto" // Only preload when modal is open
                                             />
                                         )}
                                     </div>
@@ -322,10 +349,9 @@ export default function ProjectCard({
                                                         <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-10">
                                                             <FaVideo className="text-violet-400" />
                                                         </div>
-                                                        <video 
+                                                        <LazyVideo 
                                                             src={media.src}
-                                                            className="absolute inset-0 w-full h-full object-cover"
-                                                            preload="metadata"
+                                                            className="absolute inset-0 w-full h-full"
                                                         />
                                                     </div>
                                                 )}

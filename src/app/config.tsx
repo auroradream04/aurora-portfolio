@@ -161,7 +161,7 @@ export const siteConfig = {
                     "/projects/portfolio/6.webp"
                 ],
                 previewVideos: [
-                    "/projects/portfolio/portfolio-video-4k.mp4"
+                    "/projects/portfolio/portfolio-video.mp4"
                 ]
             },
             {
@@ -201,7 +201,7 @@ export const siteConfig = {
                     "/projects/genz/5.webp"
                 ],
                 previewVideos: [
-                    "/projects/genz/genz-video-4k.mp4"
+                    "/projects/genz/genz-video.mp4"
                 ]
             },
             {
@@ -250,7 +250,7 @@ export const siteConfig = {
                     "/projects/whataboutpets/6.webp",
                 ],
                 previewVideos: [
-                    "/projects/whataboutpets/whataboutpets-video-4k.mp4"
+                    "/projects/whataboutpets/whataboutpets-video.mp4"
                 ]
             },
             {
@@ -291,7 +291,7 @@ export const siteConfig = {
                     "/projects/plaiful/6.webp" 
                 ],
                 previewVideos: [
-                    "/projects/plaiful/plaiful-video-4k.mp4"
+                    "/projects/plaiful/plaiful-video.mp4"
                 ]
             },
             {
@@ -333,7 +333,7 @@ export const siteConfig = {
                     "/projects/zambia/7.webp"
                 ],
                 previewVideos: [
-                    "/projects/zambia/zambia-video-4k.mp4"
+                    "/projects/zambia/zambia-video.mp4"
                 ]
             },
         ],

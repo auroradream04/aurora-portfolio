@@ -161,7 +161,7 @@ export const siteConfig = {
                     "/projects/portfolio/6.webp"
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/portfolio-video-4k/output.m3u8"
+                    "https://video-proxy-worker.alvs131313.workers.dev/portfolio-video-4k/output.m3u8"
                 ]
             },
             {
@@ -201,7 +201,7 @@ export const siteConfig = {
                     "/projects/genz/5.webp"
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/genz-video-4k/output.m3u8"
+                    "https://video-proxy-worker.alvs131313.workers.dev/genz-video-4k/output.m3u8"
                 ]
             },
             {
@@ -250,7 +250,7 @@ export const siteConfig = {
                     "/projects/whataboutpets/6.webp",
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/whataboutpets-video-4k/output.m3u8"
+                    "https://video-proxy-worker.alvs131313.workers.dev/whataboutpets-video-4k/output.m3u8"
                 ]
             },
             {
@@ -291,7 +291,7 @@ export const siteConfig = {
                     "/projects/plaiful/6.webp" 
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/plaiful-video-4k/output.m3u8"
+                    "https://video-proxy-worker.alvs131313.workers.dev/plaiful-video-4k/output.m3u8"
                 ]
             },
             {
@@ -333,7 +333,7 @@ export const siteConfig = {
                     "/projects/zambia/7.webp"
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/zambia-video-4k/output.m3u8"
+                    "https://video-proxy-worker.alvs131313.workers.dev/zambia-video-4k/output.m3u8"
                 ]
             },
         ],

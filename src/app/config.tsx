@@ -201,7 +201,7 @@ export const siteConfig = {
                     "/projects/genz/5.webp"
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/genz-video-4k.mp4"
+                    "https://storage.alvinchang.dev/genz-video-4k/output.m3u8"
                 ]
             },
             {

@@ -8,6 +8,7 @@ import ProjectTechStack from "./ProjectTechStack";
 import { FaGithub, FaLink, FaArrowLeft, FaArrowRight, FaImage, FaVideo } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
+import Hls from 'hls.js';
 
 type TProps = {
     title: string;
@@ -46,6 +47,83 @@ const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
                     playsInline
                     onLoadedData={() => setIsLoaded(true)}
                 />
+            )}
+        </div>
+    );
+};
+
+// HLS Video Player component
+const HLSVideoPlayer = ({ src, className }: { src: string; className?: string }) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        let hls: Hls | null = null;
+
+        if (Hls.isSupported()) {
+            hls = new Hls({
+                maxBufferLength: 30,
+                maxMaxBufferLength: 60,
+                enableWorker: true,
+                lowLatencyMode: true,
+            });
+            
+            hls.loadSource(src);
+            hls.attachMedia(video);
+            
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                video.play().catch(error => {
+                    console.log("Playback failed:", error);
+                });
+            });
+
+            hls.on(Hls.Events.ERROR, (event, data) => {
+                if (data.fatal) {
+                    switch (data.type) {
+                        case Hls.ErrorTypes.NETWORK_ERROR:
+                            console.log('Network error:', data);
+                            hls?.startLoad();
+                            break;
+                        case Hls.ErrorTypes.MEDIA_ERROR:
+                            console.log('Media error:', data);
+                            hls?.recoverMediaError();
+                            break;
+                        default:
+                            console.log('Fatal error:', data);
+                            hls?.destroy();
+                            break;
+                    }
+                }
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            // For Safari which has native HLS support
+            video.src = src;
+        }
+
+        return () => {
+            if (hls) {
+                hls.destroy();
+            }
+        };
+    }, [src]);
+
+    return (
+        <div className="relative w-full h-full">
+            <video
+                ref={videoRef}
+                className={className}
+                controls
+                playsInline
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+            />
+            {!isPlaying && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <FaVideo className="text-violet-400 text-4xl" />
+                </div>
             )}
         </div>
     );
@@ -284,14 +362,9 @@ export default function ProjectCard({
                                                 priority
                                             />
                                         ) : (
-                                            <video 
-                                                ref={videoRef}
+                                            <HLSVideoPlayer 
                                                 src={allMedia[activeMediaIndex].src}
                                                 className="w-full h-full object-contain"
-                                                controls
-                                                autoPlay
-                                                loop
-                                                preload="auto" // Only preload when modal is open
                                             />
                                         )}
                                     </div>

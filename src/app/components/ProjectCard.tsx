@@ -229,7 +229,7 @@ export default function ProjectCard({
             {combinedPreviews.length > 0 && (
                 <div className="grid grid-cols-4 gap-2 mb-3">
                     {combinedPreviews.map((media, index) => {
-                        const isVideoPreview = media.endsWith('.mp4') || media.endsWith('.webm') || media.endsWith('.mov');
+                        const isVideoPreview = media.endsWith('.mp4') || media.endsWith('.webm') || media.endsWith('.mov') || media.endsWith('.m3u8');
                         const mediaIndex = allMedia.findIndex(item => item.src === media);
                         
                         return (
@@ -246,13 +246,14 @@ export default function ProjectCard({
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
                                             <FaVideo className="text-violet-400 text-2xl" />
                                         </div>
-                                        {/* Use the first image as thumbnail for videos */}
-                                        <Image 
-                                            src={previewImages[0]} 
-                                            alt={`${title} preview thumbnail`} 
-                                            fill 
-                                            className="object-cover"
-                                        />
+                                        {previewImages.length > 0 && (
+                                            <Image 
+                                                src={previewImages[0]} 
+                                                alt={`${title} preview thumbnail`} 
+                                                fill 
+                                                className="object-cover"
+                                            />
+                                        )}
                                     </>
                                 ) : (
                                     <Image 

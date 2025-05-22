@@ -250,7 +250,7 @@ export const siteConfig = {
                     "/projects/whataboutpets/6.webp",
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/whataboutpets-video-4k.mp4"
+                    "https://storage.alvinchang.dev/whataboutpets-video-4k/output.m3u8"
                 ]
             },
             {
@@ -291,7 +291,7 @@ export const siteConfig = {
                     "/projects/plaiful/6.webp" 
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/plaiful-video-4k.mp4"
+                    "https://storage.alvinchang.dev/plaiful-video-4k/output.m3u8"
                 ]
             },
             {
@@ -333,7 +333,7 @@ export const siteConfig = {
                     "/projects/zambia/7.webp"
                 ],
                 previewVideos: [
-                    "https://storage.alvinchang.dev/zambia-video-4k.mp4"
+                    "https://storage.alvinchang.dev/zambia-video-4k/output.m3u8"
                 ]
             },
         ],

@@ -131,7 +131,7 @@ export const siteConfig = {
                 title: "Alvin Chang | Portfolio Website",
                 description:
                     "This is my portfolio website. I built it to showcase my projects and skills. It is a static site built with Next.js, Tailwind CSS, and Shadcn/UI. I used the following technologies to build it:",
-                logo: "/logox.png",
+                logo: "/projects/portfolio/portfolio-logo.webp",
                 repoLink: "https://github.com/auroradream04/aurora-portfolio",
                 technologies: [
                     {
@@ -153,21 +153,22 @@ export const siteConfig = {
                 ],
                 link: "https://alvinchang.dev",
                 previewImages: [
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png", // This one will show as "+1 more"
+                    "/projects/portfolio/1.webp",
+                    "/projects/portfolio/2.webp",
+                    "/projects/portfolio/3.webp",
+                    "/projects/portfolio/4.webp",
+                    "/projects/portfolio/5.webp",
+                    "/projects/portfolio/6.webp"
                 ],
                 previewVideos: [
-                    "/genz.mp4"
+                    "/projects/portfolio/portfolio-video-4k.mp4"
                 ]
             },
             {
                 title: "Genzify AI",
                 description:
                     "GenZify is an AI-powered tool I developed to transform everyday text into trendy Gen Z-style language. I managed both the front-end design and back-end development, integrating AI functionality for smooth and creative rephrasings. The platform delivers a fun, engaging experience, perfect for anyone looking to add a modern twist to their communication. This project highlights my skills in blending AI with user-centric design to create a playful, interactive web tool.",
-                logo: "/genzify-logo.png",
+                logo: "/projects/genz/genz-logo.webp",
                 repoLink: "https://github.com/auroradream04/genzify-app",
                 technologies: [
                     {
@@ -193,19 +194,21 @@ export const siteConfig = {
                 ],
                 link: "https://genzify-app-wine.vercel.app/",
                 previewImages: [
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png"
+                    "/projects/genz/1.webp",
+                    "/projects/genz/2.webp",
+                    "/projects/genz/3.webp",
+                    "/projects/genz/4.webp",
+                    "/projects/genz/5.webp"
                 ],
                 previewVideos: [
-                    "/genz.mp4"
+                    "/projects/genz/genz-video-4k.mp4"
                 ]
             },
             {
                 title: "WhatAboutPets",
                 description:
                     "WhatAboutPets is a comprehensive blog and e-commerce platform I built to provide valuable insights into pet care, health, and wellness. Alongside engaging articles, the site features an integrated WooCommerce store, offering a variety of pet-related products. I managed everything from designing the user-friendly interface to implementing SEO strategies and setting up the online shop. This project highlights my expertise in both content-driven sites and e-commerce solutions, creating a complete experience for pet lovers.",
-                logo: "/whataboutpets-logo.png",
+                logo: "/projects/whataboutpets/whataboutpets-logo.webp",
                 repoLink: "",
                 technologies: [
                     {
@@ -239,18 +242,22 @@ export const siteConfig = {
                 ],
                 link: "https://whataboutpets.com",
                 previewImages: [
-                    "/Portfolio.png",
-                    "/Portfolio.png"
+                    "/projects/whataboutpets/1.webp",
+                    "/projects/whataboutpets/2.webp",
+                    "/projects/whataboutpets/3.webp",
+                    "/projects/whataboutpets/4.webp",
+                    "/projects/whataboutpets/5.webp",
+                    "/projects/whataboutpets/6.webp",
                 ],
                 previewVideos: [
-                    "/genz.mp4"
+                    "/projects/whataboutpets/whataboutpets-video-4k.mp4"
                 ]
             },
             {
                 title: "Plaiful - AI Agent Directory",
                 description:
                     "Developed for a client, Plaiful is a comprehensive AI agent directory platform built on Next.js. This project involved significant customization of the OpenAlternative codebase to create a dedicated platform for discovering and comparing AI agents focused on the banking and credit union sector. I implemented advanced filtering, search capabilities, and built a modern, intuitive interface for users to easily find AI solutions tailored to their specific needs.",
-                logo: "/plaiful-logo.webp",
+                logo: "/projects/plaiful/plaiful-logo.webp",
                 repoLink: "https://github.com/Plaifully/Plai",
                 technologies: [
                     {
@@ -276,23 +283,22 @@ export const siteConfig = {
                 ],
                 link: "https://plai-web.vercel.app/",
                 previewImages: [
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png", 
-                    "/Portfolio.png" // This will show as "+2 more"
+                    "/projects/plaiful/1.webp",
+                    "/projects/plaiful/2.webp",
+                    "/projects/plaiful/3.webp",
+                    "/projects/plaiful/4.webp",
+                    "/projects/plaiful/5.webp", 
+                    "/projects/plaiful/6.webp" 
                 ],
                 previewVideos: [
-                    "/genz.mp4",
-                    "/genz.mp4"
+                    "/projects/plaiful/plaiful-video-4k.mp4"
                 ]
             },
             {
                 title: "Zambia Casino",
                 description:
                     "Built for a client, Zambia Casino is a sleek landing page for an online casino targeting the Zambian market. I designed and developed a responsive, high-performance site that effectively showcases the casino's offerings, promotions, and games. The project emphasizes strong visual elements, fast loading times, and intuitive navigation to optimize user engagement and conversion rates in the competitive online gambling space.",
-                logo: "/zambia-casino-logo.png",
+                logo: "/projects/zambia/zambia-logo.webp",
                 repoLink: "",
                 technologies: [
                     {
@@ -318,13 +324,16 @@ export const siteConfig = {
                 ],
                 link: "https://zambia-casino.vercel.app/",
                 previewImages: [
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png",
-                    "/Portfolio.png"
+                    "/projects/zambia/1.webp",
+                    "/projects/zambia/2.webp",
+                    "/projects/zambia/3.webp",
+                    "/projects/zambia/4.webp",
+                    "/projects/zambia/5.webp",
+                    "/projects/zambia/6.webp",
+                    "/projects/zambia/7.webp"
                 ],
                 previewVideos: [
-                    "/genz.mp4"
+                    "/projects/zambia/zambia-video-4k.mp4"
                 ]
             },
         ],

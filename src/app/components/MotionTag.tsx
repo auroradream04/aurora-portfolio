@@ -37,9 +37,15 @@ export default function MotionTag({
         margin: "-150px",
     });
 
+    // Common props for both static and animated elements
+    const staticProps = {
+        className,
+        style,
+        ref
+    };
+
     // On mobile, return the appropriate HTML element without animations
     if (isMobile) {
-        const staticProps = { className, style };
         switch (tag) {
             case "h1":
                 return <h1 {...staticProps}>{children}</h1>;
@@ -47,69 +53,37 @@ export default function MotionTag({
                 return <h2 {...staticProps}>{children}</h2>;
             case "section":
                 return <section {...staticProps}>{children}</section>;
+            case "div":
+                return <div {...staticProps}>{children}</div>;
+            case "li":
+                return <li {...staticProps}>{children}</li>;
             default:
                 return <div {...staticProps}>{children}</div>;
         }
     }
 
+    // Motion props for animated elements
+    const motionProps = {
+        ...staticProps,
+        variants,
+        initial,
+        animate: isInView ? animate : initial,
+        transition,
+        ...props
+    };
+
     // Desktop: Create the animated component based on tag type
     switch (tag) {
         case "h1":
-            return (
-                <motion.h1
-                    ref={ref}
-                    variants={variants}
-                    initial={initial}
-                    animate={isInView ? animate : initial}
-                    transition={transition}
-                    className={className}
-                    {...props}
-                >
-                    {children}
-                </motion.h1>
-            );
+            return <motion.h1 {...motionProps}>{children}</motion.h1>;
         case "h2":
-            return (
-                <motion.h2
-                    ref={ref}
-                    variants={variants}
-                    initial={initial}
-                    animate={isInView ? animate : initial}
-                    transition={transition}
-                    className={className}
-                    {...props}
-                >
-                    {children}
-                </motion.h2>
-            );
+            return <motion.h2 {...motionProps}>{children}</motion.h2>;
         case "section":
-            return (
-                <motion.section
-                    ref={ref}
-                    variants={variants}
-                    initial={initial}
-                    animate={isInView ? animate : initial}
-                    transition={transition}
-                    className={className}
-                    {...props}
-                >
-                    {children}
-                </motion.section>
-            );
+            return <motion.section {...motionProps}>{children}</motion.section>;
+        case "li":
+            return <motion.li {...motionProps}>{children}</motion.li>;
         default:
-            return (
-                <motion.div
-                    ref={ref}
-                    variants={variants}
-                    initial={initial}
-                    animate={isInView ? animate : initial}
-                    transition={transition}
-                    className={className}
-                    {...props}
-                >
-                    {children}
-                </motion.div>
-            );
+            return <motion.div {...motionProps}>{children}</motion.div>;
     }
 }
 

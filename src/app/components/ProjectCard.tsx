@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import ProjectTechStack from "./ProjectTechStack";
-import { FaGithub, FaLink, FaArrowLeft, FaArrowRight, FaImage, FaVideo } from "react-icons/fa";
+import { FaGithub, FaLink, FaArrowLeft, FaArrowRight, FaImage, FaVideo, FaPlay } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
 import Hls from 'hls.js';
@@ -245,8 +245,8 @@ export default function ProjectCard({
                             >
                                 {isVideoPreview ? (
                                     <>
-                                        <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
-                                            <FaVideo className="text-violet-400 text-2xl" />
+                                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 z-10">
+                                            <FaPlay className="text-violet-400 text-2xl" />
                                         </div>
                                         <Image 
                                             src={thumbnail} 

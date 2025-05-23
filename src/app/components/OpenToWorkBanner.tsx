@@ -92,9 +92,11 @@ const OpenToWorkBanner = () => {
                                     </Link>
                                 ))}
                             </div>
-                            <button className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-medium rounded-md transition-colors">
-                                Hire Me
-                            </button>
+                            <a href="/#contact">
+                                <button className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-medium rounded-md transition-colors">
+                                    Hire Me
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </motion.div>

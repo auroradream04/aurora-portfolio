@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import { stripHtmlAndDecode } from "@/app/utils/helpers";
 import Footer from "@/app/components/Footer";
 import SocialIcons from "@/app/components/SocialIcons";
+import OpenToWorkBanner from "@/app/components/OpenToWorkBanner";
 
 type TProps = {
     params: Promise<{
@@ -95,6 +96,7 @@ export default async function BlogPage(props: TProps) {
                 )}
                 <Footer noAnimate />
                 <SocialIcons noAnimate />
+                <OpenToWorkBanner />
             </main>
         </div>
     );

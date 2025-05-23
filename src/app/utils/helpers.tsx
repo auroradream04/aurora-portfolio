@@ -1,5 +1,4 @@
 import he from "he";
-import DOMPurify from 'dompurify';
 
 export function formatDate(dateString: string) {
     const date = new Date(dateString);
@@ -11,8 +10,8 @@ export function formatDate(dateString: string) {
 }
 
 export function stripHtmlAndDecode(html: string): string {
-    // Sanitize HTML using DOMPurify
-    const cleanHtml = DOMPurify.sanitize(html);
+    // Remove HTML tags (Server-safe)
+    const textWithoutTags = html.replace(/<[^>]*>?/g, '');
     // Decode HTML entities
-    return he.decode(cleanHtml);
+    return he.decode(textWithoutTags);
 }

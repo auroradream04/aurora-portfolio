@@ -1,10 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBriefcase } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"; // Assuming these icons are needed
 import Link from 'next/link';
 import { siteConfig } from "@/app/config";
@@ -19,8 +18,28 @@ const contactButtonText = "Get in touch";
 
 const OpenToWorkBanner = () => {
     const [isVisible, setIsVisible] = useState(true);
+    const [hasScrolledSufficiently, setHasScrolledSufficiently] = useState(false);
 
-    if (!isVisible) return null;
+    const scrollThreshold = 200; // Adjust this value as needed (in pixels)
+
+    const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        if (scrollTop > scrollThreshold && !hasScrolledSufficiently) {
+            setHasScrolledSufficiently(true);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        // Also check scroll position on mount in case the page is already scrolled down
+        handleScroll();
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [hasScrolledSufficiently]); // Depend on hasScrolledSufficiently to re-run effect when threshold is met
+
+    // Render null if not visible OR if scroll threshold hasn't been met yet
+    if (!isVisible || !hasScrolledSufficiently) return null;
 
     return (
         <AnimatePresence>
@@ -53,11 +72,11 @@ const OpenToWorkBanner = () => {
                             </button>
                         </div>
 
-                        <p className="text-sm text-slate-350 mb-3">
+                        <p className="text-sm text-slate-350 mb-3 md:block hidden">
                             Bringing your ideas to life with expertise in:
                         </p>
 
-                        <div className="flex flex-wrap gap-2 mb-4">
+                        <div className="flex flex-wrap gap-2 mb-4 md:flex hidden">
                             {expertiseTags.map(tag => (
                                 <span key={tag} className="px-3 py-1 bg-black/30 border border-violet-500/20 rounded-full text-xs text-slate-350">
                                     {tag}

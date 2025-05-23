@@ -30,7 +30,7 @@ const OpenToWorkBanner = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.3 }}
-                    className="fixed bottom-4 right-4 w-full max-w-sm bg-black/90 backdrop-blur-md border border-violet-500/20 rounded-lg shadow-lg p-4 z-50"
+                    className="fixed bottom-4 left-4 w-[calc(100vw_-_2rem)] bg-black/90 backdrop-blur-md border border-violet-500/20 rounded-lg shadow-lg p-4 z-50 sm:right-4 sm:left-auto sm:max-w-sm"
                 >
                     <ReadingProgressBar />
                     <div className="pt-2">

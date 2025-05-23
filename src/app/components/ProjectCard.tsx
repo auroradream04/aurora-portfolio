@@ -257,12 +257,12 @@ export default function ProjectCard({
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/30 z-10">
                                             <FaPlay className="text-violet-400 text-2xl" />
                                         </div>
-                                        <Image 
+                                            <Image 
                                             src={thumbnail} 
                                             alt={`${title} video thumbnail`} 
-                                            fill 
-                                            className="object-cover"
-                                        />
+                                                fill 
+                                                className="object-cover"
+                                            />
                                     </>
                                 ) : (
                                     <Image 

@@ -76,7 +76,7 @@ const OpenToWorkBanner = () => {
                             Bringing your ideas to life with expertise in:
                         </p>
 
-                        <div className="flex flex-wrap gap-2 mb-4 md:flex hidden">
+                        <div className="flex-wrap gap-2 mb-4 md:flex hidden">
                             {expertiseTags.map(tag => (
                                 <span key={tag} className="px-3 py-1 bg-black/30 border border-violet-500/20 rounded-full text-xs text-slate-350">
                                     {tag}

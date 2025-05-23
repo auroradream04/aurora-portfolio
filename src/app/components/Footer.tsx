@@ -33,7 +33,7 @@ export default function Footer({ isSticky, noAnimate }: TProps) {
                     {siteConfig.alias}
                 </Link>
             </p>
-            <p className="mb-0 text-[8px]">
+            <p className="mb-0">
                 &copy; 2024 {siteConfig.title}. All rights
                 reserved.
             </p>

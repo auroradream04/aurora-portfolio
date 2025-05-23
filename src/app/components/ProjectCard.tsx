@@ -20,6 +20,7 @@ type TProps = {
         name: string;
     }[];
     link: string;
+    thumbnail: string;
     previewImages?: string[]; // Array of preview images
     previewVideos?: string[]; // Array of preview videos
 };
@@ -137,13 +138,13 @@ export default function ProjectCard({
     technologies,
     link,
     repoLink,
+    thumbnail,
     previewImages = ["/Portfolio.png"], // Default placeholder
     previewVideos = [], // Default empty
 }: TProps) {
     const [showModal, setShowModal] = useState(false);
     const [activeMediaIndex, setActiveMediaIndex] = useState(0);
     const [mounted, setMounted] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
 
     // Combine images and videos into a single array for easier navigation
     const allMedia: MediaItem[] = [
@@ -247,14 +248,12 @@ export default function ProjectCard({
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
                                             <FaVideo className="text-violet-400 text-2xl" />
                                         </div>
-                                        {previewImages.length > 0 && (
-                                            <Image 
-                                                src={previewImages[0]} 
-                                                alt={`${title} preview thumbnail`} 
-                                                fill 
-                                                className="object-cover"
-                                            />
-                                        )}
+                                        <Image 
+                                            src={thumbnail} 
+                                            alt={`${title} video thumbnail`} 
+                                            fill 
+                                            className="object-cover"
+                                        />
                                     </>
                                 ) : (
                                     <Image 
@@ -367,7 +366,7 @@ export default function ProjectCard({
                                             <HLSVideoPlayer 
                                                 src={allMedia[activeMediaIndex].src}
                                                 className="w-full h-full object-contain"
-                                                poster={previewImages[0]}
+                                                poster={thumbnail}
                                             />
                                         )}
                                     </div>

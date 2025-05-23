@@ -132,6 +132,7 @@ export const siteConfig = {
                 description:
                     "This is my portfolio website. I built it to showcase my projects and skills. It is a static site built with Next.js, Tailwind CSS, and Shadcn/UI. I used the following technologies to build it:",
                 logo: "/projects/portfolio/portfolio-logo.webp",
+                thumbnail: "/projects/portfolio/portfolio-thumbnail.webp",
                 repoLink: "https://github.com/auroradream04/aurora-portfolio",
                 technologies: [
                     {
@@ -169,6 +170,7 @@ export const siteConfig = {
                 description:
                     "GenZify is an AI-powered tool I developed to transform everyday text into trendy Gen Z-style language. I managed both the front-end design and back-end development, integrating AI functionality for smooth and creative rephrasings. The platform delivers a fun, engaging experience, perfect for anyone looking to add a modern twist to their communication. This project highlights my skills in blending AI with user-centric design to create a playful, interactive web tool.",
                 logo: "/projects/genz/genz-logo.webp",
+                thumbnail: "/projects/genz/genz-thumbnail.webp",
                 repoLink: "https://github.com/auroradream04/genzify-app",
                 technologies: [
                     {
@@ -209,6 +211,7 @@ export const siteConfig = {
                 description:
                     "WhatAboutPets is a comprehensive blog and e-commerce platform I built to provide valuable insights into pet care, health, and wellness. Alongside engaging articles, the site features an integrated WooCommerce store, offering a variety of pet-related products. I managed everything from designing the user-friendly interface to implementing SEO strategies and setting up the online shop. This project highlights my expertise in both content-driven sites and e-commerce solutions, creating a complete experience for pet lovers.",
                 logo: "/projects/whataboutpets/whataboutpets-logo.webp",
+                thumbnail: "/projects/whataboutpets/whataboutpets-thumbnail.webp",
                 repoLink: "",
                 technologies: [
                     {
@@ -258,6 +261,7 @@ export const siteConfig = {
                 description:
                     "Developed for a client, Plaiful is a comprehensive AI agent directory platform built on Next.js. This project involved significant customization of the OpenAlternative codebase to create a dedicated platform for discovering and comparing AI agents focused on the banking and credit union sector. I implemented advanced filtering, search capabilities, and built a modern, intuitive interface for users to easily find AI solutions tailored to their specific needs.",
                 logo: "/projects/plaiful/plaiful-logo.webp",
+                thumbnail: "/projects/plaiful/plaiful-thumbnail.webp",
                 repoLink: "https://github.com/Plaifully/Plai",
                 technologies: [
                     {
@@ -299,6 +303,7 @@ export const siteConfig = {
                 description:
                     "Built for a client, Zambia Casino is a sleek landing page for an online casino targeting the Zambian market. I designed and developed a responsive, high-performance site that effectively showcases the casino's offerings, promotions, and games. The project emphasizes strong visual elements, fast loading times, and intuitive navigation to optimize user engagement and conversion rates in the competitive online gambling space.",
                 logo: "/projects/zambia/zambia-logo.webp",
+                thumbnail: "/projects/zambia/zambia-thumbnail.webp",
                 repoLink: "",
                 technologies: [
                     {

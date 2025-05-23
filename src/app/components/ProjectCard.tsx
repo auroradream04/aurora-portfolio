@@ -122,6 +122,15 @@ const HLSVideoPlayer = ({ src, className, poster }: { src: string; className?: s
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
             />
+            {/* Blurred poster overlay while not playing */}
+            {!isPlaying && poster && (
+                <img
+                    src={poster}
+                    alt="Video poster blur"
+                    className="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none"
+                    style={{ filter: 'blur(8px)', transition: 'opacity 0.3s', opacity: !isPlaying ? 1 : 0 }}
+                />
+            )}
             {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                     <FaVideo className="text-violet-400 text-4xl" />

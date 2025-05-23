@@ -13,6 +13,7 @@ import ContactForm from "./components/ContactForm";
 import { fetchBlogs } from "./utils/fetchWordpress";
 import HomepageBlogs from "./components/HomepageBlogs";
 import Technologies from "./components/Technologies";
+import OpenToWorkBanner from "./components/OpenToWorkBanner";
 
 export default async function Home() {
     const jsonLd = {
@@ -56,6 +57,7 @@ export default async function Home() {
                     <ContactForm />
                     <Footer />
                     <SocialIcons />
+                    <OpenToWorkBanner />
                 </main>
             </section>
         </main>

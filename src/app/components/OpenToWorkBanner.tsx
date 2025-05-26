@@ -85,7 +85,7 @@ const OpenToWorkBanner = () => {
                         </div>
 
                         <div className="flex items-center justify-between">
-                            <div className="flex gap-3">
+                            <div className="flex gap-2">
                                 {siteConfig.socialLinks.map((link, index) => (
                                     <Link key={index} href={link.url === 'mailto:alvin@studioaurora.io' ? '/#contact' : link.url} target={link.url === 'mailto:alvin@studioaurora.io' ? '_self' : '_blank'} className="text-slate-400 hover:text-violet-500 transition-colors" aria-label="Social link">
                                         {link.icon}

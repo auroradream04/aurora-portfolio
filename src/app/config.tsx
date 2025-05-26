@@ -1,6 +1,7 @@
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin, FaSquareXTwitter, FaDiscord } from "react-icons/fa6";
+import { FaGithub, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaSquareXTwitter, FaDiscord, FaThreads } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
+import { SiBluesky } from "react-icons/si";
 import {
     RiNextjsFill,
     RiTailwindCssFill,
@@ -65,6 +66,14 @@ export const siteConfig = {
         {
             icon: <FaSquareXTwitter />,
             url: "https://x.com/aurora_dream04",
+        },
+        {
+            icon: <FaThreads />,
+            url: "https://www.threads.com/@schrodinger0404",
+        },
+        {
+            icon: <SiBluesky />,
+            url: "https://bsky.app/profile/alvinchang.dev",
         },
         {
             icon: <FaDiscord />,

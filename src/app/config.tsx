@@ -116,14 +116,14 @@ export const siteConfig = {
                 position: "Full-stack Web Developer",
                 duration: "2024 - Present",
                 description:
-                    "Built responsive web apps and e-commerce solutions using Next.js and Tailwind CSS, managed full project cycles from planning to deployment, ensuring timely delivery and client satisfaction.",
+                    "Built responsive web apps, e-commerce platforms, and custom API solutions primarily using Next.js, Tailwind CSS, and TypeScript. Managed entire development lifecycles from initial client consultation and strategic planning to development, deployment, and ongoing support. Focused heavily on delivering high-performance, SEO-friendly solutions with modern, intuitive user experiences, ensuring client satisfaction through proactive communication and timely project delivery.",
             },
             {
                 company: "Altera Karna Business Corp.",
                 position: "Software Engineer",
                 duration: "2023 - 2024",
                 description:
-                    "Developed diverse websites including streaming services and landing pages, implemented custom APIs, and streamlined internal workflows through automation and desktop apps.",
+                    "Developed and maintained various dynamic websites such as streaming services, interactive landing pages, and content-driven news platforms utilizing Next.js, WordPress, and Express.js. Engineered robust APIs and automated internal processes with advanced web scraping tools, significantly enhancing operational efficiency. Additionally, designed and built desktop applications using Electron to streamline internal workflows and support team productivity.",
             },
         ],
         projects: [

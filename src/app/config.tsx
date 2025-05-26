@@ -103,11 +103,11 @@ export const siteConfig = {
             },
         ],
         aboutMe: `
-            <p>
-                Hi! I'm Alvin, a <strong>full-stack developer</strong> who started coding in <strong>2023</strong>. Since then, I've built <strong>streaming platforms</strong>, <strong>blogs</strong>, and <strong>e-commerce sites</strong>. Whether it's front-end finesse or back-end logic, I love bringing ideas to life on the web.
+            <p style="margin-bottom: 1rem;">
+              Hi! I'm Alvin, a <strong>full-stack developer</strong> specializing in building <strong>responsive websites</strong>, engaging blogs, e-commerce solutions, and interactive streaming platforms. I focus on crafting <strong>clean and efficient code</strong>, from polished front-end designs to robust back-end systems.
             </p>
-            <p>
-                When I'm not coding, you'll find me playing <strong>Dota 2</strong>, cooking up new recipes, or streaming on <strong>Kick</strong>. Let's connect—I'd love to help with your next <strong>website</strong> or <strong>API</strong> project!
+            <p style="margin-bottom: 1rem;">
+              When I'm not developing web applications, you'll find me experimenting in the kitchen or exploring the latest tech trends. Let's connect to discuss your next <strong>web or API project</strong>!
             </p>
         `,
         experiences: [

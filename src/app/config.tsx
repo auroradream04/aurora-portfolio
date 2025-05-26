@@ -112,18 +112,18 @@ export const siteConfig = {
         `,
         experiences: [
             {
-                company: "Studio Aurora",
-                position: "Founder | Lead Developer",
+                company: "Freelance",
+                position: "Full-stack Web Developer",
                 duration: "2024 - Present",
                 description:
-                    "Founded a web development agency focused on delivering high-quality websites and custom digital solutions. Lead the end-to-end development process, from client consultation and project planning to design implementation and deployment. Skilled in building scalable web apps, e-commerce platforms, and custom API integrations using modern frameworks like Next.js. Oversee a team of developers and coordinate projects to ensure timely delivery and client satisfaction.",
+                    "Built responsive web apps and e-commerce solutions using Next.js and Tailwind CSS, managed full project cycles from planning to deployment, ensuring timely delivery and client satisfaction.",
             },
             {
-                company: "Pingu Dev Inc.",
-                position: "Full-stack Engineer",
+                company: "Altera Karna Business Corp.",
+                position: "Software Engineer",
                 duration: "2023 - 2024",
                 description:
-                    "Developed various websites including streaming platforms, landing pages, and news sites using Next.js, WordPress, and Maccms. Built and managed APIs with Express.js, and leveraged web scraping to curate and generate content. Introduced automation processes to streamline workflows and built desktop applications with Electron for internal use.",
+                    "Developed diverse websites including streaming services and landing pages, implemented custom APIs, and streamlined internal workflows through automation and desktop apps.",
             },
         ],
         projects: [

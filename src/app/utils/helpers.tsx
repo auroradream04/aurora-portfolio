@@ -10,7 +10,7 @@ export function formatDate(dateString: string) {
 }
 
 export function stripHtmlAndDecode(html: string): string {
-    // Remove HTML tags
+    // Remove HTML tags (Server-safe)
     const textWithoutTags = html.replace(/<[^>]*>?/g, '');
     // Decode HTML entities
     return he.decode(textWithoutTags);

@@ -15,6 +15,7 @@ interface TProps extends HTMLMotionProps<any> {
     className?: string;
     once?: boolean;
     transition?: any;
+    style?: any;
 }
 
 export default function MotionTag({
@@ -26,6 +27,7 @@ export default function MotionTag({
     className,
     once = true,
     transition = { duration: 0.3 },
+    style,
     ...props
 }: TProps) {
     const isMobile = useIsMobile();
@@ -35,33 +37,54 @@ export default function MotionTag({
         margin: "-150px",
     });
 
-    return (
-        <>
-            {tag === "h1" ? (
-                <motion.h1
-                    ref={ref}
-                    variants={variants}
-                    initial={!isMobile ? initial : "visible"}
-                    animate={isInView ? animate : initial}
-                    transition={transition}
-                    className={className}
-                >
-                    {children}
-                </motion.h1>
-            ) : (
-                <motion.div
-                    ref={ref}
-                    variants={variants}
-                    initial={!isMobile ? initial : "visible"}
-                    animate={isInView ? animate : initial}
-                    transition={transition}
-                    className={className}
-                >
-                    {children}
-                </motion.div>
-            )}
-        </>
-    );
+    // Common props for both static and animated elements
+    const staticProps = {
+        className,
+        style,
+        ref
+    };
+
+    // On mobile, return the appropriate HTML element without animations
+    if (isMobile) {
+        switch (tag) {
+            case "h1":
+                return <h1 {...staticProps}>{children}</h1>;
+            case "h2":
+                return <h2 {...staticProps}>{children}</h2>;
+            case "section":
+                return <section {...staticProps}>{children}</section>;
+            case "div":
+                return <div {...staticProps}>{children}</div>;
+            case "li":
+                return <li {...staticProps}>{children}</li>;
+            default:
+                return <div {...staticProps}>{children}</div>;
+        }
+    }
+
+    // Motion props for animated elements
+    const motionProps = {
+        ...staticProps,
+        variants,
+        initial,
+        animate: isInView ? animate : initial,
+        transition,
+        ...props
+    };
+
+    // Desktop: Create the animated component based on tag type
+    switch (tag) {
+        case "h1":
+            return <motion.h1 {...motionProps}>{children}</motion.h1>;
+        case "h2":
+            return <motion.h2 {...motionProps}>{children}</motion.h2>;
+        case "section":
+            return <motion.section {...motionProps}>{children}</motion.section>;
+        case "li":
+            return <motion.li {...motionProps}>{children}</motion.li>;
+        default:
+            return <motion.div {...motionProps}>{children}</motion.div>;
+    }
 }
 
 // ref={ref}

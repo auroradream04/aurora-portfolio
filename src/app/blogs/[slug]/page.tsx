@@ -7,14 +7,16 @@ import { Metadata } from "next";
 import { stripHtmlAndDecode } from "@/app/utils/helpers";
 import Footer from "@/app/components/Footer";
 import SocialIcons from "@/app/components/SocialIcons";
+import OpenToWorkBanner from "@/app/components/OpenToWorkBanner";
 
 type TProps = {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 };
 
-export async function generateMetadata({ params }: TProps): Promise<Metadata> {
+export async function generateMetadata(props: TProps): Promise<Metadata> {
+    const params = await props.params;
     const blog = await fetchBlog(params.slug);
 
     const description = stripHtmlAndDecode(blog.excerpt.rendered);
@@ -46,7 +48,8 @@ export async function generateMetadata({ params }: TProps): Promise<Metadata> {
     };
 }
 
-export default async function BlogPage({ params }: TProps) {
+export default async function BlogPage(props: TProps) {
+    const params = await props.params;
     const blog = await fetchBlog(params.slug);
 
     // Function to highlight code blocks
@@ -86,13 +89,14 @@ export default async function BlogPage({ params }: TProps) {
 
     return (
         <div className="w-full flex justify-center">
-            <main className="w-full min-h-screen max-w-[600px] p-2">
+            <main className="w-full min-h-screen max-w-[800px] p-2">
                 <BlogHeader />
                 {blog && (
                     <BlogContent blog={blog} content={highlightedContent} />
                 )}
                 <Footer noAnimate />
                 <SocialIcons noAnimate />
+                <OpenToWorkBanner />
             </main>
         </div>
     );

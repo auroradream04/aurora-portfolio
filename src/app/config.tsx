@@ -1,6 +1,7 @@
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin, FaSquareXTwitter, FaDiscord } from "react-icons/fa6";
+import { FaGithub, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaSquareXTwitter, FaDiscord, FaThreads } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
+import { SiBluesky } from "react-icons/si";
 import {
     RiNextjsFill,
     RiTailwindCssFill,
@@ -50,7 +51,7 @@ export const siteConfig = {
     taglines: [
         "🚀 Coding Simplicity, Crafting Solutions: Bringing Ideas to Life, One Line at a Time. ✨ Let's transform challenges into digital possibilities with precision and creativity!",
         "🎨 Where Code Meets Creativity: Building Digital Experiences that Matter. 🌐 From intuitive interfaces to powerful backend systems, I create solutions that engage and inspire.",
-        "💡 Innovating Beyond the Screen: Crafting Seamless Digital Journeys. 🌟 From concept to completion, let’s build the future, one pixel and one line of code at a time.",
+        "💡 Innovating Beyond the Screen: Crafting Seamless Digital Journeys. 🌟 From concept to completion, let's build the future, one pixel and one line of code at a time.",
     ],
     titles: ["Full-Stack Developer", "NextJS Developer", "Wordpress Developer"],
     socialLinks: [
@@ -65,6 +66,14 @@ export const siteConfig = {
         {
             icon: <FaSquareXTwitter />,
             url: "https://x.com/aurora_dream04",
+        },
+        {
+            icon: <FaThreads />,
+            url: "https://www.threads.com/@schrodinger0404",
+        },
+        {
+            icon: <SiBluesky />,
+            url: "https://bsky.app/profile/alvinchang.dev",
         },
         {
             icon: <FaDiscord />,
@@ -103,27 +112,27 @@ export const siteConfig = {
             },
         ],
         aboutMe: `
-            <p>
-                Hi! I'm Alvin, a <strong>full-stack developer</strong> who started coding in <strong>2023</strong>. Since then, I've built <strong>streaming platforms</strong>, <strong>blogs</strong>, and <strong>e-commerce sites</strong>. Whether it’s front-end finesse or back-end logic, I love bringing ideas to life on the web.
+            <p style="margin-bottom: 1rem;">
+              Hi! I'm Alvin, a <strong>full-stack developer</strong> specializing in building <strong>responsive websites</strong>, engaging blogs, e-commerce solutions, and interactive streaming platforms. I focus on crafting <strong>clean and efficient code</strong>, from polished front-end designs to robust back-end systems.
             </p>
-            <p>
-                When I’m not coding, you’ll find me playing <strong>Dota 2</strong>, cooking up new recipes, or streaming on <strong>Kick</strong>. Let's connect—I'd love to help with your next <strong>website</strong> or <strong>API</strong> project!
+            <p style="margin-bottom: 1rem;">
+              When I'm not developing web applications, you'll find me experimenting in the kitchen or exploring the latest tech trends. Let's connect to discuss your next <strong>web or API project</strong>!
             </p>
         `,
         experiences: [
             {
-                company: "Studio Aurora",
-                position: "Founder | Lead Developer",
+                company: "Freelance",
+                position: "Full-stack Web Developer",
                 duration: "2024 - Present",
                 description:
-                    "Founded a web development agency focused on delivering high-quality websites and custom digital solutions. Lead the end-to-end development process, from client consultation and project planning to design implementation and deployment. Skilled in building scalable web apps, e-commerce platforms, and custom API integrations using modern frameworks like Next.js. Oversee a team of developers and coordinate projects to ensure timely delivery and client satisfaction.",
+                    "Built responsive web apps, e-commerce platforms, and custom API solutions primarily using Next.js, Tailwind CSS, and TypeScript. Managed entire development lifecycles from initial client consultation and strategic planning to development, deployment, and ongoing support. Focused heavily on delivering high-performance, SEO-friendly solutions with modern, intuitive user experiences, ensuring client satisfaction through proactive communication and timely project delivery.",
             },
             {
-                company: "Pingu Dev Inc.",
-                position: "Full-stack Engineer",
+                company: "Altera Karna Business Corp.",
+                position: "Software Engineer",
                 duration: "2023 - 2024",
                 description:
-                    "Developed various websites including streaming platforms, landing pages, and news sites using Next.js, WordPress, and Maccms. Built and managed APIs with Express.js, and leveraged web scraping to curate and generate content. Introduced automation processes to streamline workflows and built desktop applications with Electron for internal use.",
+                    "Developed and maintained various dynamic websites such as streaming services, interactive landing pages, and content-driven news platforms utilizing Next.js, WordPress, and Express.js. Engineered robust APIs and automated internal processes with advanced web scraping tools, significantly enhancing operational efficiency. Additionally, designed and built desktop applications using Electron to streamline internal workflows and support team productivity.",
             },
         ],
         projects: [
@@ -131,7 +140,8 @@ export const siteConfig = {
                 title: "Alvin Chang | Portfolio Website",
                 description:
                     "This is my portfolio website. I built it to showcase my projects and skills. It is a static site built with Next.js, Tailwind CSS, and Shadcn/UI. I used the following technologies to build it:",
-                logo: "/logox.png",
+                logo: "/projects/portfolio/portfolio-logo.webp",
+                thumbnail: "/projects/portfolio/portfolio-thumbnail.webp",
                 repoLink: "https://github.com/auroradream04/aurora-portfolio",
                 technologies: [
                     {
@@ -152,12 +162,24 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://alvinchang.dev",
+                previewImages: [
+                    "/projects/portfolio/1.webp",
+                    "/projects/portfolio/2.webp",
+                    "/projects/portfolio/3.webp",
+                    "/projects/portfolio/4.webp",
+                    "/projects/portfolio/5.webp",
+                    "/projects/portfolio/6.webp"
+                ],
+                previewVideos: [
+                    "https://video-proxy-worker.alvs131313.workers.dev/portfolio-video-4k/output.m3u8"
+                ]
             },
             {
                 title: "Genzify AI",
                 description:
                     "GenZify is an AI-powered tool I developed to transform everyday text into trendy Gen Z-style language. I managed both the front-end design and back-end development, integrating AI functionality for smooth and creative rephrasings. The platform delivers a fun, engaging experience, perfect for anyone looking to add a modern twist to their communication. This project highlights my skills in blending AI with user-centric design to create a playful, interactive web tool.",
-                logo: "/genzify-logo.png",
+                logo: "/projects/genz/genz-logo.webp",
+                thumbnail: "/projects/genz/genz-thumbnail.webp",
                 repoLink: "https://github.com/auroradream04/genzify-app",
                 technologies: [
                     {
@@ -182,12 +204,23 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://genzify-app-wine.vercel.app/",
+                previewImages: [
+                    "/projects/genz/1.webp",
+                    "/projects/genz/2.webp",
+                    "/projects/genz/3.webp",
+                    "/projects/genz/4.webp",
+                    "/projects/genz/5.webp"
+                ],
+                previewVideos: [
+                    "https://video-proxy-worker.alvs131313.workers.dev/genz-video-4k/output.m3u8"
+                ]
             },
             {
                 title: "WhatAboutPets",
                 description:
                     "WhatAboutPets is a comprehensive blog and e-commerce platform I built to provide valuable insights into pet care, health, and wellness. Alongside engaging articles, the site features an integrated WooCommerce store, offering a variety of pet-related products. I managed everything from designing the user-friendly interface to implementing SEO strategies and setting up the online shop. This project highlights my expertise in both content-driven sites and e-commerce solutions, creating a complete experience for pet lovers.",
-                logo: "/whataboutpets-logo.png",
+                logo: "/projects/whataboutpets/whataboutpets-logo.webp",
+                thumbnail: "/projects/whataboutpets/whataboutpets-thumbnail.webp",
                 repoLink: "",
                 technologies: [
                     {
@@ -220,21 +253,29 @@ export const siteConfig = {
                     },
                 ],
                 link: "https://whataboutpets.com",
+                previewImages: [
+                    "/projects/whataboutpets/1.webp",
+                    "/projects/whataboutpets/2.webp",
+                    "/projects/whataboutpets/3.webp",
+                    "/projects/whataboutpets/4.webp",
+                    "/projects/whataboutpets/5.webp",
+                    "/projects/whataboutpets/6.webp",
+                ],
+                previewVideos: [
+                    "https://video-proxy-worker.alvs131313.workers.dev/whataboutpets-video-4k/output.m3u8"
+                ]
             },
             {
-                title: "丹丹影院 - ynct55.com",
+                title: "Plaiful - AI Agent Directory",
                 description:
-                    "ynct55.com is a Chinese-language streaming platform offering free access to a diverse library of movies, TV shows, and anime. Managed all aspects of the project, from backend infrastructure and database setup to front-end design and user experience. Implemented efficient streaming solutions and optimized the platform for SEO to reach a broader audience. This project highlights my skills in building and maintaining a complete streaming site, tailored specifically for a Chinese-speaking user base.",
-                logo: "/ynct55-logo.png",
-                repoLink: "",
+                    "Developed for a client, Plaiful is a comprehensive AI agent directory platform built on Next.js. This project involved significant customization of the OpenAlternative codebase to create a dedicated platform for discovering and comparing AI agents focused on the banking and credit union sector. I implemented advanced filtering, search capabilities, and built a modern, intuitive interface for users to easily find AI solutions tailored to their specific needs.",
+                logo: "/projects/plaiful/plaiful-logo.webp",
+                thumbnail: "/projects/plaiful/plaiful-thumbnail.webp",
+                repoLink: "https://github.com/Plaifully/Plai",
                 technologies: [
                     {
                         icon: <RiNextjsFill className="text-[#FFF]" />,
                         name: "Next.js",
-                    },
-                    {
-                        icon: <RiWordpressFill className="text-[#21759B]" />,
-                        name: "WordPress",
                     },
                     {
                         icon: <SiTypescript className="text-[#3178C6]" />,
@@ -245,15 +286,103 @@ export const siteConfig = {
                         name: "Tailwind CSS",
                     },
                     {
-                        icon: <SiShadcnui className="text-[#FFF]" />,
-                        name: "Shadcn/UI",
-                    },
-                    {
                         icon: <SiPrisma className="text-[#2D3748]" />,
                         name: "Prisma",
                     },
+                    {
+                        icon: <SiSupabase className="text-[#0084d4]" />,
+                        name: "Supabase",
+                    },
                 ],
-                link: "https://www.ynct55.com",
+                link: "https://plai-web.vercel.app/",
+                previewImages: [
+                    "/projects/plaiful/1.webp",
+                    "/projects/plaiful/2.webp",
+                    "/projects/plaiful/3.webp",
+                    "/projects/plaiful/4.webp",
+                    "/projects/plaiful/5.webp", 
+                    "/projects/plaiful/6.webp" 
+                ],
+                previewVideos: [
+                    "https://video-proxy-worker.alvs131313.workers.dev/plaiful-video-4k/output.m3u8"
+                ]
+            },
+            {
+                title: "Zambia Casino",
+                description:
+                    "Built for a client, Zambia Casino is a sleek landing page for an online casino targeting the Zambian market. I designed and developed a responsive, high-performance site that effectively showcases the casino's offerings, promotions, and games. The project emphasizes strong visual elements, fast loading times, and intuitive navigation to optimize user engagement and conversion rates in the competitive online gambling space.",
+                logo: "/projects/zambia/zambia-logo.webp",
+                thumbnail: "/projects/zambia/zambia-thumbnail.webp",
+                repoLink: "",
+                technologies: [
+                    {
+                        icon: <RiNextjsFill className="text-[#FFF]" />,
+                        name: "Next.js",
+                    },
+                    {
+                        icon: <SiTypescript className="text-[#3178C6]" />,
+                        name: "TypeScript",
+                    },
+                    {
+                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
+                        name: "Tailwind CSS",
+                    },
+                    {
+                        icon: <SiFramer className="text-[#0055FF]" />,
+                        name: "Framer Motion",
+                    },
+                    {
+                        icon: <SiShadcnui className="text-[#FFF]" />,
+                        name: "Shadcn/UI",
+                    },
+                ],
+                link: "https://zambia-casino.vercel.app/",
+                previewImages: [
+                    "/projects/zambia/1.webp",
+                    "/projects/zambia/2.webp",
+                    "/projects/zambia/3.webp",
+                    "/projects/zambia/4.webp",
+                    "/projects/zambia/5.webp",
+                    "/projects/zambia/6.webp",
+                    "/projects/zambia/7.webp"
+                ],
+                previewVideos: [
+                    "https://video-proxy-worker.alvs131313.workers.dev/zambia-video-4k/output.m3u8"
+                ]
+            },
+            {
+                title: "WPAutomator",
+                description:
+                    "WPAutomator is an AI-powered WordPress content generation and automation tool designed to transform content marketing strategies. It enables users to generate, optimize, and publish high-converting content across multiple WordPress sites with enterprise-grade tools. The platform leverages advanced AI technologies to streamline content creation, multi-site management, and automated publishing capabilities, helping WordPress website owners and content marketers efficiently scale their content operations.",
+                logo: "/wpautomator-logo.png",
+                repoLink: "",
+                technologies: [
+                    {
+                        icon: <RiWordpressFill className="text-[#21759B]" />,
+                        name: "WordPress",
+                    },
+                    {
+                        icon: <RiOpenaiFill className="text-[#412991]" />,
+                        name: "OpenAI",
+                    },
+                    {
+                        icon: <RiNextjsFill className="text-[#FFF]" />,
+                        name: "Next.js",
+                    },
+                    {
+                        icon: <SiTypescript className="text-[#3178C6]" />,
+                        name: "TypeScript",
+                    },
+                    {
+                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
+                        name: "Tailwind CSS",
+                    },
+                    {
+                        icon: <TbApi className="text-[#FFF]" />,
+                        name: "REST API",
+                    },
+                ],
+                link: "https://wpautomator.com",
             },
         ],
         technologies: {

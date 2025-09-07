@@ -4,10 +4,11 @@ import StarsCanvas from "./components/StarBackground";
 import Glow from "./components/Glow";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "./config";
 import { Toaster } from "sonner";
 import Plausible from "./components/Plausible";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // const geistSans = localFont({
 //     src: "./fonts/GeistVF.woff",
@@ -86,9 +87,12 @@ export default function RootLayout({
                 <Glow />
                 <Toaster />
                 <Plausible />
+                <div className="max-w-[2325px] mx-auto">
                 {children}
+                </div>
             </body>
-            {/* <Analytics /> */}
+            <Analytics />
+            <SpeedInsights />
             <GoogleAnalytics
                 gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ""}
             />

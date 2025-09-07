@@ -175,6 +175,40 @@ export const siteConfig = {
                 ]
             },
             {
+                title: "WPAutomator",
+                description:
+                    "WPAutomator is an AI-powered WordPress content generation and automation tool designed to transform content marketing strategies. It enables users to generate, optimize, and publish high-converting content across multiple WordPress sites with enterprise-grade tools. The platform leverages advanced AI technologies to streamline content creation, multi-site management, and automated publishing capabilities, helping WordPress website owners and content marketers efficiently scale their content operations.",
+                logo: "/wpautomator-logo.png",
+                repoLink: "",
+                technologies: [
+                    {
+                        icon: <RiWordpressFill className="text-[#21759B]" />,
+                        name: "WordPress",
+                    },
+                    {
+                        icon: <RiOpenaiFill className="text-[#412991]" />,
+                        name: "OpenAI",
+                    },
+                    {
+                        icon: <RiNextjsFill className="text-[#FFF]" />,
+                        name: "Next.js",
+                    },
+                    {
+                        icon: <SiTypescript className="text-[#3178C6]" />,
+                        name: "TypeScript",
+                    },
+                    {
+                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
+                        name: "Tailwind CSS",
+                    },
+                    {
+                        icon: <TbApi className="text-[#FFF]" />,
+                        name: "REST API",
+                    },
+                ],
+                link: "https://wpautomator.com",
+            },
+            {
                 title: "Genzify AI",
                 description:
                     "GenZify is an AI-powered tool I developed to transform everyday text into trendy Gen Z-style language. I managed both the front-end design and back-end development, integrating AI functionality for smooth and creative rephrasings. The platform delivers a fun, engaging experience, perfect for anyone looking to add a modern twist to their communication. This project highlights my skills in blending AI with user-centric design to create a playful, interactive web tool.",
@@ -349,40 +383,6 @@ export const siteConfig = {
                 previewVideos: [
                     "https://video-proxy-worker.alvs131313.workers.dev/zambia-video-4k/output.m3u8"
                 ]
-            },
-            {
-                title: "WPAutomator",
-                description:
-                    "WPAutomator is an AI-powered WordPress content generation and automation tool designed to transform content marketing strategies. It enables users to generate, optimize, and publish high-converting content across multiple WordPress sites with enterprise-grade tools. The platform leverages advanced AI technologies to streamline content creation, multi-site management, and automated publishing capabilities, helping WordPress website owners and content marketers efficiently scale their content operations.",
-                logo: "/wpautomator-logo.png",
-                repoLink: "",
-                technologies: [
-                    {
-                        icon: <RiWordpressFill className="text-[#21759B]" />,
-                        name: "WordPress",
-                    },
-                    {
-                        icon: <RiOpenaiFill className="text-[#412991]" />,
-                        name: "OpenAI",
-                    },
-                    {
-                        icon: <RiNextjsFill className="text-[#FFF]" />,
-                        name: "Next.js",
-                    },
-                    {
-                        icon: <SiTypescript className="text-[#3178C6]" />,
-                        name: "TypeScript",
-                    },
-                    {
-                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
-                        name: "Tailwind CSS",
-                    },
-                    {
-                        icon: <TbApi className="text-[#FFF]" />,
-                        name: "REST API",
-                    },
-                ],
-                link: "https://wpautomator.com",
             },
         ],
         technologies: {

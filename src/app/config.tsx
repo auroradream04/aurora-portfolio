@@ -121,9 +121,17 @@ export const siteConfig = {
         `,
         experiences: [
             {
+                company: "Studio Aurora",
+                position: "Founder & Lead Developer",
+                duration: "2025 - Present",
+                url: "https://www.studioaurora.io",
+                description:
+                    "Founded and lead a web agency delivering high-performance websites, e-commerce platforms, and custom web solutions. Oversee end-to-end project delivery from client consultation and strategy to development, deployment, and ongoing support using Next.js, Tailwind CSS, and TypeScript.",
+            },
+            {
                 company: "Freelance",
                 position: "Full-stack Web Developer",
-                duration: "2024 - Present",
+                duration: "2024 - 2025",
                 description:
                     "Built responsive web apps, e-commerce platforms, and custom API solutions primarily using Next.js, Tailwind CSS, and TypeScript. Managed entire development lifecycles from initial client consultation and strategic planning to development, deployment, and ongoing support. Focused heavily on delivering high-performance, SEO-friendly solutions with modern, intuitive user experiences, ensuring client satisfaction through proactive communication and timely project delivery.",
             },
@@ -136,6 +144,47 @@ export const siteConfig = {
             },
         ],
         projects: [
+            {
+                title: "Studio Aurora",
+                description:
+                    "Studio Aurora is my web agency, delivering premium websites and web applications for clients worldwide. The agency site itself showcases our portfolio, services, and approach — built with Next.js, Tailwind CSS, and Framer Motion for a polished, high-performance experience that reflects the quality we bring to every client project.",
+                logo: "/projects/studio-aurora/icon.svg",
+                thumbnail: "/projects/studio-aurora/1.png",
+                repoLink: "",
+                technologies: [
+                    {
+                        icon: <RiNextjsFill className="text-[#FFF]" />,
+                        name: "Next.js",
+                    },
+                    {
+                        icon: <SiTypescript className="text-[#3178C6]" />,
+                        name: "TypeScript",
+                    },
+                    {
+                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
+                        name: "Tailwind CSS",
+                    },
+                    {
+                        icon: <SiFramer className="text-[#0055FF]" />,
+                        name: "Framer Motion",
+                    },
+                    {
+                        icon: <SiShadcnui className="text-[#FFF]" />,
+                        name: "Shadcn/UI",
+                    },
+                ],
+                link: "https://www.studioaurora.io",
+                previewImages: [
+                    "/projects/studio-aurora/1.png",
+                    "/projects/studio-aurora/2.png",
+                    "/projects/studio-aurora/3.png",
+                    "/projects/studio-aurora/4.png",
+                    "/projects/studio-aurora/5.png",
+                    "/projects/studio-aurora/6.png",
+                    "/projects/studio-aurora/7.png",
+                ],
+                previewVideos: []
+            },
             {
                 title: "Alvin Chang | Portfolio Website",
                 description:

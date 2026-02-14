@@ -32,6 +32,15 @@ export default function Footer({ isSticky, noAnimate }: TProps) {
                 >
                     {siteConfig.alias}
                 </Link>
+                {" & "}
+                <a
+                    className="underline uppercase font-bold text-blue-400 hover:text-pink-400 transition-colors duration-300"
+                    href="https://www.studioaurora.io"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Studio Aurora
+                </a>
             </p>
             <p className="mb-0">
                 &copy; 2024 {siteConfig.title}. All rights
